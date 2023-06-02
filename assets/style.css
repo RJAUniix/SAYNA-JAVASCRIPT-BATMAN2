@@ -1,0 +1,595 @@
+/* Général */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+/* Navbar */
+nav a{
+    color: white;
+    font-size: 30px;
+    text-decoration-line: none;
+}
+
+nav {
+    display:flex;
+    justify-content: space-between;
+    margin: 0px 132px 10px 100px ;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    width: 20px;
+    margin-left: 100px;
+    list-style: none;
+    font-weight: lighter;
+    font-family: Rajdhani;
+    color: white;
+}
+
+.current {
+    text-decoration: underline 1px;
+    text-underline-offset: 5px;
+}
+
+nav li:hover {
+    font-weight: bold;
+    text-decoration: underline 3px;
+}
+
+header {
+    padding-bottom: 50px;
+    border-bottom: 0.3em solid #bcbbbd23;
+}
+
+
+/* Container de tous le corps du site */
+.container{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-right: 102px;
+    margin-left: 102px;
+    border: 0.3em solid #bcbbbd23;
+    border-top: none;
+    max-width: 100%;
+}
+
+/* Annimation des logos qui passent aux jaunes */
+.logo {
+    transition: all 0.3s ease-in-out;
+}
+  
+.logo:hover {
+    filter: invert(13%) sepia(70%) saturate(5);
+}
+
+body {
+    background-image: url(../Illustrations/Bathome1.png);
+    background-position:top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment:scroll;
+    background-color: #000000;
+    font-family: Space Grotesk;
+    overflow-x: hidden;
+    animation: body 2s ease-out forwards;
+
+}
+
+/* Annimation venant de la droite pour tous les éléments sauf les social-icons */
+body:not(.social-icons) {
+    animation: body 2s ease-out;
+}
+
+@keyframes body {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+}
+
+
+/* Les sections heros*/
+.hero {
+    font-size: 20px;
+    color: white;
+    max-width: 550px; 
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.hero button, .confirm-btn {
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+    font-family: Rajdhani;
+    color: white;
+    font-size: 15px;
+    background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+    cursor: pointer;
+    border: 0;
+}
+
+button:hover{
+    background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 0, 9, 0.411) 100%);
+}
+
+.hero p{
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.hero a{
+    justify-content: center;
+}
+
+.hero .fleche{
+    margin-top: 350px; 
+}
+
+
+/* La section hero dans game */
+.hero-game {
+    
+}
+
+/* Les icons média sur la droite */
+.social-icons {
+    position: fixed;
+    right: 29px;
+    top: 250px;
+    z-index: 9999;
+}
+
+.social-icons a{
+    margin-bottom: 10px;
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+}
+
+section {
+    padding: 3em;
+}
+
+.card-section img{
+    width: 17em;
+    height: auto;
+}
+
+/* Les articles et les cards */
+.card-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    grid-gap: 0px;
+    align-items: center;
+}
+
+.article {
+    width: 85%;
+    padding: 2em;
+    font-size: 20px;
+    text-align: justify;
+    color: white;
+}
+
+.card {
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Annimation des div */
+.card-section img {
+    transition: all 0.5s ease-out; /* Animation de 0,5s avec un effet de transition doux */
+}
+  
+.card-section img:hover {
+    transform: scale(1.1);
+}
+
+.card p{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Le batarang qui et à travers le texte Nemesis */
+.article img{
+    position: absolute; 
+    z-index: -1; 
+    margin-left: 60px;
+    margin-top: -77px;
+}
+
+/* La photo de batman sur le côté */
+.batman {
+    position: relative;
+    top: 2520px; 
+    right: 0px;
+    width: 400px; 
+    height: 290px;
+}
+
+.centree {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+/* La photo de la justice league au complet */
+.justiceLeague {
+    width: 100%;
+    position: absolute;
+    padding-top: 700px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Maintenant le div MULTIMEDIA */
+.text-m {
+    font-size: 25px;
+    margin-top: 650px; 
+    padding: 20px;
+    color: white;
+}
+
+.multimedia {
+    display: grid;
+    color: white;
+    grid-template-columns: 1fr 2fr 1fr; 
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.card-multimedia {
+    width: 110%;
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(to right, #535353 10%, #03293f 60%);
+}
+ 
+.card-multimedia img {
+    width: 220px;
+    height: 220px;
+}
+ 
+.card-multimedia .text { 
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    overflow: auto;
+}
+ 
+.card-multimedia h4 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 70%;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+ 
+.card-multimedia label {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.card-multimedia .text #titre{
+    font-family: Rajdhani;
+    font-size: 14px;
+    font-weight: 1;
+    margin-bottom: 10px;
+}
+ 
+.card-multimedia p {
+    font-size: 0.7rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Position de la dernière flèche */
+.last-grid {
+    grid-column-start: 4; 
+    grid-column-end: 4;
+}
+
+.bande-annonce {
+    text-align: center;
+}
+
+.bande-annonce img{
+    width: 90%;
+}
+
+/* Le formulaire de contact */
+.contact {
+    width: 100%;
+    background: linear-gradient(160deg, #4b4a4afd 10%, #0f202bf5 60%);
+    position: absolute;
+    height: auto;
+    margin-top: 150px;
+    right: 0;
+    border: 1px solid rgba(128, 128, 128, 0.664);
+}
+
+/* Formulaire de contact */
+#formulaire-contact {
+    width: 40%;
+    color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+#formulaire-contact h3{
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 1px;
+    margin-bottom: 70px;
+}
+
+#formulaire-contact h4{
+    font-size: 20px;
+    font-weight: 1;
+}
+
+
+#formulaire-contact input[type="text"], #formulaire-contact input[type="email"] {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    color: white;
+    opacity: 90%;
+}
+
+.checkbox-form {
+    width: 90%;
+    margin: 10px 0px 10px 0px;
+}
+
+.checkbox-form label{
+    opacity: 50%;
+}
+
+#formulaire-contact select{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: transparent;
+    opacity: 50%;
+}
+
+/* Le code pour le select Customisé */
+#frequence {
+    -webkit-appearance: none; /* Masquer l'apparence par défaut */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("Logos/Fleche2_avec_rotation.png");
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: right center; 
+    padding-right: 20px; 
+    padding-bottom: 5px;
+    cursor: pointer; 
+} 
+
+/* Pour positioner les boutons */
+.div-btn {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#formulaire-contact .btn{
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, #fdfdfd7e 10%, #146696c2 60%);
+    border-image-slice: 1;
+    margin-top: 10px;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
+
+.confirm-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+/* Popup */
+.popup {
+    background: linear-gradient(118deg , #7e7d7dfd 10%, #173246f5 80%);
+    width: 700px;
+    height: 25em;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.5s;
+}
+
+.popup h1{
+    margin-top: 25%;
+    color: white;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.popup-ouvert {
+    transform: translate(-50%,-50%) scale(1);
+    visibility: visible;
+}
+
+/* Maintenant la section citation */
+.citation {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 1000px;
+    margin: 0 auto;  
+    color: white;
+    flex-wrap: wrap;
+}
+
+/* Les appostrophes */
+.quot-o {
+    top: 0;
+}
+
+.text-citation {
+    width: 50%;
+    text-align: center;
+    padding: 5em;
+}   
+
+.quot-f img{
+    position: relative;
+    margin-top: 200px;
+}
+
+.nav-point {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Les trois petit points de navigation */
+.dot {
+    width: 5px;
+    height: 5px;
+    margin: 0 5px;
+    border: 1px solid #19587D;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+}
+
+.active {
+    background-color: rgb(6, 95, 197);
+}
+
+
+/* footer */
+footer {
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.copyright {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    justify-content: center;
+    color: white;
+
+}
+
+.copyright label{
+    font-size: 10px;
+}
+
+/* Les icones tout en bas */
+.icons-footer {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.icons-footer img{
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+
+/* Responsivité */
+@media screen and (max-width: 1000px) {
+    section{padding: 0px 10px 0px 10px;}
+    .hero p{margin-top: 1em;}
+    .social-icons img{margin-right: -90px; width: 200%;}
+    .social-icons .bat{margin-right: -90px; width: 450%;}
+    .card-section {display: inline;}
+    .article {width: 90%; font-size: 1.2em; padding-left: 5% ;}
+    .card-section .card img{width: 30%; height: auto;}
+    .batman {visibility: hidden;}
+    .container {justify-content: center; margin: 10px; padding: 0;}
+    .card-multimedia img{width: 20%;}
+    .bande-annonce img{width: 80%; height: auto; padding: 2em; align-items: center; justify-content: center;}
+    .justiceLeague{justify-content: center; padding-top: 25em;}
+    .text-m{margin-top: 500px;}
+    #formulaire-contact{width: 70%;}
+    footer .copyright{margin-left: 0;}
+    .icons-footer .logo{width: 1.5rem;}
+  }
+
+@media screen and (max-width: 869px) {
+    .card-multimedia {background-color: #19587D;}
+    .card-multimedia img{display: none; background-color: #19587D;}
+    .card-multimedia .text{width: 100%; background-color: #19587D;}
+    .text-m{margin-top: 500px;}
+    .bande-annonce{margin-top: 5vh; margin-bottom: 5vh;}
+    .formulaire-contact{padding: 0; margin: 0; width: 150%;}
+    .citation{display: inline-block; text-align: center;}
+    .citation .text-citation{display: inline-block; text-align: center;}
+    .quot-o img{margin-top: 2rem;} 
+    .quot-f img{margin-top: 1rem;} 
+    footer .copyright{margin-left: 0;}
+}
+
+@media screen and (max-width: 700px) {
+    .hero .fleche{margin-top: 100px;}
+    .article {font-size: 1.1em;}
+    .text-m{margin-top: 400px;}
+    .bande-annonce img{padding: 0; margin: 0;}
+    footer .quot-o{width: 40px; height: auto; margin-left: 2em;}
+    footer .quot-f{width: 40px; height: auto; margin-left: 0;}
+    footer .copyright{margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+    nav ul{visibility: hidden;}
+    .social-icons img{width: 150%;}
+    .social-icons .bat{width: 200%;}
+    .hero .fleche{margin-top: 100px;}
+    .container{margin: 0;}
+    .article {font-size: 1em;}
+    .text-m{margin-top: 400px;}
+    footer .quot-o{width: 40px; height: auto; margin-left: 2em;}
+    footer .quot-f{width: 40px; height: auto; margin-left: 0;}
+    footer .copyright{margin-left: 0;}
+}
