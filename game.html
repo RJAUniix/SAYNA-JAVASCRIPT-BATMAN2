@@ -5,30 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batman Project | Game</title>
-    <link rel="stylesheet" href="assets/Styles/style.css">
+    <link rel="stylesheet" href="assets/Styles/game.css">
 </head>
 <body>
     <div class="container" id="container">
         <header>
             <nav>
                 <a href="index.html"><img class="logo" id="batman" src="assets/Logos/logohome.png" alt="logo Batman" width="120px" height="40px"></a>
-            <div class="nav-links">
-                <ul>
-                    <li> <a href="index.html">Home</a> </li>
-                    <li class="current"> <a href="game.html">Game</a> </li>
-                </ul>
-            </div>
+                <div class="nav-links">
+                    <ul>
+                        <li> <a href="index.html">Home</a> </li>
+                        <li class="current"> <a href="game.html">Game</a> </li>
+                    </ul>
+                </div>
             </nav>
         </header>
 
         <main>
-            <div class="hero-game">
-                <p>Au nom de ses parents assassinés, Bruce Wayne mène une guerre éternelle contre les criminels de Gotham City. Il est vengeur. Il est la nuit.</p>
-                <h2>Il est Batman.</h2>
-                <a href="#cinema"><button>VOIR LE HERO</button></a><a href="#nemesis"><button>LES ADVERSAIRES</button></a><br>
-                <a href="#"><img src="assets/Logos/flèche_down_header.png" alt="flèche qui pointe vers le bas" class="fleche"></a>
+            <section class="hero">
+                <div class="hero-game">
+                    <p>Let's play a little game...</p>    
+                </div>
+            </section>
+
+            <!-- Les icones statiques sur le côté -->
+            <div class="social-icons">
+                <a href="#container"><img class="logo bat" src="assets/Logos/logo_bat_flèche.png" alt="logo Batman"></a>
+                <a href="https://www.facebook.com" class="logo" target="_blank"><img src="assets/Logos/icon_facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com" class="logo" target="_blank"><img src="assets/Logos/icon_ig.png" alt="Instagram"></a>
+                <a href="https://www.twitter.com" class="logo" target="_blank"><img src="assets/Logos/icon_tw.png" alt="Twitter"></a>
+                <a href="#copyright"><img class="logo bat" src="assets/Logos/logo_bat_flèche_2.png" alt="logo Batman"></a>
             </div>
+
+            <section class="fleche">
+                <div>                
+                    <a href="#"><img src="assets/Logos/flèche_down_header.png" alt="flèche qui pointe vers le bas" class="fleche"></a>
+                </div>
+            </section>
+
+            <section id="quiz">
+                <p>CONNAISSEZ VOUS BIEN LE CHEVALIER NOIR ?</p>
+                <img src="assets/Illustrations_game/Batgame_2.png" alt="Photo de batman">
+                <button>DEMARRER LE QUIZ</button>
+            </section>
+            
         </main>
+
+        <!-- Le Footer -->
+        <footer>
+            <div class="copyright" id="copyright">
+                <img src="assets/Logos/icon_WB.png" alt="Logo de warner bros" style="vertical-align: middle; align-items: center;">
+                <label style="text-align: center;">Ce projet respecte l’univers cinématographique des films Batman récents. Version Nolan & Snyder & Reeves</label><br>
+                
+                <div class="icons-footer">   
+                    <a href="https://www.sayna.io" target="_blank"><img class="logo" src="assets/Logos/logo_sayna_white.png" alt="Logo SAYNA"></a>
+                    <img src="assets/Logos/icon_x.png" class="logo" alt="icon x">
+                    <a href="https://www.dc.com" target="_blank"><img class="logo" src="assets/Logos/icon_DC.png" alt="Logo de DC"></a>
+                    <a href="https://www.facebook.com" target="_blank"><img class="logo"  src="assets/Logos/icon_facebook.png" alt="Logo de Facebook"></a>
+                    <a href="https://www.instagram.com" target="_blank"><img    class="logo"  src="assets/Logos/icon_ig.png" alt="Logo d'Instagram"></a>
+                    <a href="https://www.twitter.com" target="_blank"><img  class="logo"  src="assets/Logos/icon_tw.png" alt="Logo de Twitter"></a>
+                </div>
+            </div>
+        </footer>
 
     </div>
 </body>

@@ -90,7 +90,7 @@ header {
 }
 
 body {
-  background-image: url(../Illustrations/Bathome1.png);
+  background-image: url(../Illustrations_game/Batgame_1.png);
   background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
@@ -134,8 +134,16 @@ body:not(.social-icons) {
   font-size: 20px;
   color: white;
   max-width: 550px;
-  margin: 0 auto;
+  margin: 3em;
   text-align: center;
+  height: 350px;
+}
+
+.hero p {
+    font-size: 35px;
+    text-transform: uppercase;
+    width: 300px;
+    text-align: left;
 }
 
 .hero button, .confirm-btn {
@@ -163,11 +171,27 @@ button:hover {
   justify-content: center;
 }
 
-.hero .fleche{
-  margin-top: 350px;
+.fleche{
+    position: absolute;
+    margin: 2em auto;
+    text-align: center;
+    align-items: center;
 }
 
-/* La section hero dans game */
+#quiz {
+    margin: 15em auto;
+}
+
+#quiz p{
+    font-size: 30px;
+    color: white;
+}
+
+#quiz img{
+    width: 80%;
+    margin: 0 auto;
+}
+
 /* Les icons média sur la droite */
 .social-icons {
   position: fixed;
@@ -183,347 +207,6 @@ button:hover {
   justify-content: center;
 }
 
-section {
-  padding: 3em;
-}
-
-.card-section img {
-  width: 17em;
-  height: auto;
-}
-
-/* Les articles et les cards */
-.card-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-flow: column;
-  grid-gap: 0px;
-  align-items: center;
-}
-
-.article {
-  width: 85%;
-  padding: 2em;
-  font-size: 20px;
-  text-align: justify;
-  color: white;
-}
-
-.card {
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Annimation des div */
-.card-section img {
-  transition: all 0.5s ease-out; /* Animation de 0,5s avec un effet de transition doux */
-}
-
-.card-section img:hover {
-  transform: scale(1.1);
-}
-
-.card p {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Le batarang qui et à travers le texte Nemesis */
-.article img {
-  position: absolute;
-  z-index: -1;
-  margin-left: 60px;
-  margin-top: -77px;
-}
-
-/* La photo de batman sur le côté */
-.batman {
-  position: relative;
-  top: 2520px;
-  right: 0px;
-  width: 400px;
-  height: 290px;
-}
-
-.centree {
-  width: 80%;
-  display: block;
-  margin: 0 auto;
-}
-
-/* La photo de la justice league au complet */
-.justiceLeague {
-  width: 100%;
-  position: absolute;
-  padding-top: 700px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Maintenant le div MULTIMEDIA */
-.text-m {
-  font-size: 25px;
-  margin-top: 650px;
-  padding: 20px;
-  color: white;
-}
-
-.multimedia {
-  display: grid;
-  color: white;
-  grid-template-columns: 1fr 2fr 1fr;
-  align-items: center;
-  margin-bottom: 100px;
-}
-
-.card-multimedia {
-  width: 110%;
-  height: 220px;
-  display: flex;
-  flex-direction: row;
-  border-radius: 10px;
-  overflow: hidden;
-  background: linear-gradient(to right, #535353 10%, #03293f 60%);
-}
-
-.card-multimedia img {
-  width: 220px;
-  height: 220px;
-}
-
-.card-multimedia .text {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  overflow: auto;
-}
-
-.card-multimedia h4 {
-  font-size: 0.8rem;
-  font-weight: bold;
-  opacity: 70%;
-  margin-bottom: 5px;
-  letter-spacing: 1px;
-}
-
-.card-multimedia label {
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.card-multimedia .text #titre {
-  font-family: "rajdhani";
-  font-size: 14px;
-  font-weight: 1;
-  margin-bottom: 10px;
-}
-
-.card-multimedia p {
-  font-size: 0.7rem;
-  color: white;
-  margin-bottom: 5px;
-}
-
-/* Position de la dernière flèche */
-.last-grid {
-  grid-column-start: 4;
-  grid-column-end: 4;
-}
-
-.bande-annonce {
-  text-align: center;
-}
-
-.bande-annonce img {
-  width: 90%;
-}
-
-/* Le formulaire de contact */
-.contact {
-  width: 100%;
-  background: linear-gradient(160deg, rgba(75, 74, 74, 0.9921568627) 10%, rgba(15, 32, 43, 0.9607843137) 60%);
-  position: absolute;
-  height: auto;
-  margin-top: 150px;
-  right: 0;
-  border: 1px solid rgba(128, 128, 128, 0.664);
-}
-
-/* Formulaire de contact */
-#formulaire-contact {
-  width: 40%;
-  color: white;
-  margin: 0 auto;
-  margin-top: 50px;
-  justify-content: center;
-}
-
-#formulaire-contact h3 {
-  text-align: center;
-  font-size: 25px;
-  letter-spacing: 1px;
-  margin-bottom: 70px;
-}
-
-#formulaire-contact h4 {
-  font-size: 20px;
-  font-weight: 1;
-}
-
-#formulaire-contact input[type=text], #formulaire-contact input[type=email] {
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  border-bottom: 1px solid white;
-  margin-top: 10px;
-  margin-bottom: 25px;
-  color: white;
-  opacity: 90%;
-}
-
-.checkbox-form {
-  width: 90%;
-  margin: 10px 0px 10px 0px;
-}
-
-.checkbox-form label {
-  opacity: 50%;
-}
-
-#formulaire-contact select {
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-bottom: 1px solid white;
-  color: white;
-  background-color: transparent;
-  opacity: 50%;
-}
-
-/* Le code pour le select Customisé */
-#frequence {
-  -webkit-appearance: none; /* Masquer l'apparence par défaut */
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url("Logos/Fleche2_avec_rotation.png");
-  background-repeat: no-repeat;
-  background-size: 16px;
-  background-position: right center;
-  padding-right: 20px;
-  padding-bottom: 5px;
-  cursor: pointer;
-}
-
-/* Pour positioner les boutons */
-.div-btn {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-#formulaire-contact .btn {
-  width: 100px;
-  height: 30px;
-  background-color: transparent;
-  color: white;
-  border: 1px solid transparent;
-  -o-border-image: linear-gradient(to right, rgba(253, 253, 253, 0.4941176471) 10%, rgba(20, 102, 150, 0.7607843137) 60%);
-     border-image: linear-gradient(to right, rgba(253, 253, 253, 0.4941176471) 10%, rgba(20, 102, 150, 0.7607843137) 60%);
-  border-image-slice: 1;
-  margin-top: 10px;
-  vertical-align: middle;
-  margin-bottom: 20px;
-}
-
-.confirm-btn {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-}
-
-/* Popup */
-.popup {
-  background: linear-gradient(118deg, rgba(126, 125, 125, 0.9921568627) 10%, rgba(23, 50, 70, 0.9607843137) 80%);
-  width: 700px;
-  height: 25em;
-  border-radius: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.1);
-  text-align: center;
-  padding: 0 30px 30px;
-  color: #333;
-  visibility: hidden;
-  transition: transform 0.5s;
-}
-
-.popup h1 {
-  margin-top: 25%;
-  color: white;
-}
-
-.hide {
-  visibility: hidden;
-}
-
-.popup-ouvert {
-  transform: translate(-50%, -50%) scale(1);
-  visibility: visible;
-}
-
-/* Maintenant la section citation */
-.citation {
-  margin-left: 10px;
-  display: flex;
-  justify-content: center;
-  padding-top: 1000px;
-  margin: 0 auto;
-  color: white;
-  flex-wrap: wrap;
-}
-
-/* Les appostrophes */
-.quot-o {
-  top: 0;
-}
-
-.text-citation {
-  width: 50%;
-  text-align: center;
-  padding: 5em;
-}
-
-.quot-f img {
-  position: relative;
-  margin-top: 200px;
-}
-
-.nav-point {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-
-/* Les trois petit points de navigation */
-.dot {
-  width: 5px;
-  height: 5px;
-  margin: 0 5px;
-  border: 1px solid #19587D;
-  border-radius: 50%;
-  background-color: rgb(0, 0, 0);
-}
-
-.active {
-  background-color: rgb(6, 95, 197);
-}
 
 /* footer */
 footer {

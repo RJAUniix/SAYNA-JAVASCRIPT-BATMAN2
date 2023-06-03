@@ -1,0 +1,13 @@
+/* Les polices */
+@font-face {
+  font-family: "spacegrotesk";
+  src: url("../../Polices/spaceGrotesk/spacegrotesk-variablefont_wght-webfont.woff2") format("woff2"), url("../../Polices/spaceGrotesk/spacegrotesk-variablefont_wght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "rajdhani";
+  src: url("../../Polices/rajhani/rajdhani-regular-webfont.woff2") format("woff2"), url("../../Polices/rajhani/rajdhani-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}/*# sourceMappingURL=fonts.css.map */
