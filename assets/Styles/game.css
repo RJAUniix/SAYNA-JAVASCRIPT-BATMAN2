@@ -146,22 +146,6 @@ body:not(.social-icons) {
     text-align: left;
 }
 
-.hero button, .confirm-btn {
-  height: 50px;
-  width: 200px;
-  margin: 10px;
-  font-family: "rajdhani";
-  color: white;
-  font-size: 15px;
-  background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
-  cursor: pointer;
-  border: 0;
-}
-
-button:hover {
-  background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 0, 9, 0.411) 100%);
-}
-
 .hero p {
   justify-content: center;
   margin-top: 150px;
@@ -171,11 +155,10 @@ button:hover {
   justify-content: center;
 }
 
-.fleche{
+.fleche div img{
     position: absolute;
+    left: 47%;
     margin: 2em auto;
-    text-align: center;
-    align-items: center;
 }
 
 #quiz {
@@ -183,15 +166,34 @@ button:hover {
 }
 
 #quiz p{
-    font-size: 30px;
+    font-size: 25px;
     color: white;
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 #quiz img{
+    display: block;
     width: 80%;
     margin: 0 auto;
 }
 
+button {
+    display: block;
+    height: 50px;
+    width: 200px;
+    margin: 4em auto;
+    font-family: "rajdhani";
+    color: white;
+    font-size: 15px;
+    background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+    cursor: pointer;
+    border: 0;
+}
+
+button:hover {
+  background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 0, 9, 0.411) 100%);
+}
 /* Les icons média sur la droite */
 .social-icons {
   position: fixed;
@@ -210,8 +212,7 @@ button:hover {
 
 /* footer */
 footer {
-  margin-top: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 25em;
 }
 
 .copyright {
