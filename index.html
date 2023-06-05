@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batman Project | Home</title>
     <link rel="stylesheet" href="assets/Styles/style.css">
+    <script src="assets/script.js" defer></script>
 </head>
 <body>
     <div class="container" id="container"> 
@@ -211,23 +212,5 @@
             </footer>
             
         </div>
-
-        <!-- Ici c'est la partie JavaScript -->
-        <script>
-            let popup = document.getElementById("popup");
-            let form = document.getElementById("formulaire-contact");
-            let emailInput = document.getElementById("email-adress");
-
-            function afficherPopup(){  
-                let email = emailInput.value;
-                if(emailInput.checkValidity()) {
-                    popup.classList.add("popup-ouvert");
-                    form.classList.add("hide");
-                }
-                else{
-                    alert('Remplissez le formulaire correctement svp!')
-                }
-            }
-        </script>
 </body>
 </html>
