@@ -24,7 +24,8 @@ links.forEach(link => {
 
 // Fonction pour effectuer le défilement en douceur
 function smoothScroll(event) {
-event.preventDefault(); // Empêche le comportement par défaut du lien
+// Empêche le comportement par défaut du lien
+event.preventDefault(); 
 
 const targetId = this.getAttribute('href'); // Récupère l'ID de la cible du lien
 const targetElement = document.querySelector(targetId); // Sélectionne l'élément cible
