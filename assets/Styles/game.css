@@ -32,7 +32,7 @@ p {
 nav {
   display: flex;
   justify-content: space-between;
-  margin: 0px 132px 10px 100px;
+  margin: 0px 132px 10px 132px;
   align-items: center;
 }
 nav a {
