@@ -1,4 +1,5 @@
-/* Les polices */
+@charset "UTF-8";
+/* Les polices et les couleurs*/ /* Les polices */
 @font-face {
   font-family: "spacegrotesk";
   src: url("../Polices/spaceGrotesk/spacegrotesk-variablefont_wght-webfont.woff2") format("woff2"), url("../../Polices/spaceGrotesk/spacegrotesk-variablefont_wght-webfont.woff") format("woff");
@@ -11,6 +12,19 @@
   font-weight: normal;
   font-style: normal;
 }
+:root {
+  --jaune1: #FFFF00;
+  --jaune1: #F8F184;
+  --bleue: #19587D;
+  --rouge: #B11213;
+  --noir1: #0D0E09;
+  --gris: #C4C4C4;
+  --noir2: #000000;
+  --blanc: #FFFFFF;
+  --gradient-bleue: linear-gradient(to right, #fdfdfd7e 10%, #146696c2 60%);
+  --gradient-rouge: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+}
+
 /* Général */
 * {
   margin: 0;
@@ -34,16 +48,19 @@ nav {
   margin: 0px 132px 10px 132px;
   align-items: center;
 }
+
 nav a {
   color: white;
   font-size: 30px;
   -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
+
 nav ul {
   display: flex;
   justify-content: space-around;
 }
+
 nav li {
   width: 20px;
   margin-left: 100px;
@@ -52,14 +69,16 @@ nav li {
   font-family: "rajdhani";
   color: white;
 }
+
 nav li:hover {
   font-weight: bold;
   -webkit-text-decoration: underline 3px;
-          text-decoration: underline 3px;
+  text-decoration: underline 3px;
 }
+
 nav .current {
   -webkit-text-decoration: underline 1px;
-          text-decoration: underline 1px;
+  text-decoration: underline 1px;
   text-underline-offset: 5px;
 }
 
@@ -98,13 +117,13 @@ body {
   font-family: "spacegrotesk";
   overflow-x: hidden;
   -webkit-animation: body 2s ease-out forwards;
-          animation: body 2s ease-out forwards;
+  animation: body 2s ease-out forwards;
 }
 
 /* Annimation venant de la droite pour tous les éléments sauf les social-icons */
 body:not(.social-icons) {
   -webkit-animation: body 2s ease-out;
-          animation: body 2s ease-out;
+  animation: body 2s ease-out;
 }
 
 @-webkit-keyframes body {
@@ -117,7 +136,6 @@ body:not(.social-icons) {
     transform: translateX(0%);
   }
 }
-
 @keyframes body {
   from {
     opacity: 0;
@@ -139,10 +157,10 @@ body:not(.social-icons) {
 }
 
 .hero p {
-    font-size: 35px;
-    text-transform: uppercase;
-    width: 300px;
-    text-align: left;
+  font-size: 35px;
+  text-transform: uppercase;
+  width: 300px;
+  text-align: left;
 }
 
 .hero p {
@@ -154,40 +172,40 @@ body:not(.social-icons) {
   justify-content: center;
 }
 
-.fleche div img{
-    position: absolute;
-    left: 47%;
-    margin: 2em auto;
+.fleche div img {
+  position: absolute;
+  left: 47%;
+  margin: 2em auto;
 }
 
 #quiz {
-    margin: 15em auto;
+  margin: 15em auto;
 }
 
-#quiz p{
-    font-size: 25px;
-    color: white;
-    text-align: center;
-    margin-bottom: 1em;
+#quiz p {
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
-#quiz img{
-    display: block;
-    width: 80%;
-    margin: 0 auto;
+#quiz img {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
 }
 
 button {
-    display: block;
-    height: 50px;
-    width: 200px;
-    margin: 4em auto;
-    font-family: "rajdhani";
-    color: white;
-    font-size: 15px;
-    background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
-    cursor: pointer;
-    border: 0;
+  display: block;
+  height: 50px;
+  width: 200px;
+  margin: 4em auto;
+  font-family: "rajdhani";
+  color: white;
+  font-size: 15px;
+  background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+  cursor: pointer;
+  border: 0;
 }
 
 button:hover {
@@ -202,13 +220,12 @@ button:hover {
   z-index: 9999;
 }
 
-.social-icons a{
+.social-icons a {
   margin-bottom: 10px;
   display: flex;
   margin: 30px;
   justify-content: center;
 }
-
 
 /* footer */
 footer {
@@ -408,4 +425,4 @@ footer {
   footer .copyright {
     margin-left: 0;
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=game.css.map */

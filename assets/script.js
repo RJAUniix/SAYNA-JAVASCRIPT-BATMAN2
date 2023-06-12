@@ -42,16 +42,3 @@ if (targetElement) {
 
 
 // Quiz
-
-//References
-const start = document.getElementById("start");
-const fleche = document.querySelector(".fleche");
-const startQuiz = document.querySelector(".container-quiz");
-const btn = document.getElementById("startQuiz");
-
-//hide quiz and display start screen
-btn.onclick = () => {
-    start.classList.add("hide");
-    fleche.classList.add("hide");
-    startQuiz.classList.remove("hide");
-};

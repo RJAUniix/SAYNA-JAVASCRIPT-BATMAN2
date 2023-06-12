@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "Sass/fonts.css";
 :root {
   --jaune1: #FFFF00;
   --jaune1: #F8F184;
@@ -13,6 +12,19 @@
   --gradient-rouge: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
 }
 
+/* Les polices */
+@font-face {
+  font-family: "spacegrotesk";
+  src: url("../Polices/spaceGrotesk/spacegrotesk-variablefont_wght-webfont.woff2") format("woff2"), url("../../Polices/spaceGrotesk/spacegrotesk-variablefont_wght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "rajdhani";
+  src: url("../Polices/rajhani/rajdhani-regular-webfont.woff2") format("woff2"), url("../../Polices/rajhani/rajdhani-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 /* Général */
 * {
   margin: 0;
@@ -337,7 +349,7 @@ section .card-section img {
   background: linear-gradient(160deg, rgba(75, 74, 74, 0.9921568627) 10%, rgba(15, 32, 43, 0.9607843137) 60%);
   position: absolute;
   height: auto;
-  margin-top: 150px;
+  margin-top: 140px;
   right: 0;
   border: 1px solid rgba(128, 128, 128, 0.664);
   /* Formulaire de contact */

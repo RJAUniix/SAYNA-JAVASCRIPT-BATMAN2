@@ -1,0 +1,401 @@
+/* Les polices et les couleurs*/
+@import "Partials/fonts";
+@import "Partials/colors";
+  /* Général */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h2 {
+    font-size: 25px;
+  }
+  
+  p {
+    font-size: 18px;
+    font-family: "spacegrotesk";
+  }
+  
+  /* Navbar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 132px 10px 132px;
+    align-items: center;
+  }
+  nav a {
+    color: white;
+    font-size: 30px;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  nav li {
+    width: 20px;
+    margin-left: 100px;
+    list-style: none;
+    font-weight: lighter;
+    font-family: "rajdhani";
+    color: white;
+  }
+  nav li:hover {
+    font-weight: bold;
+    -webkit-text-decoration: underline 3px;
+            text-decoration: underline 3px;
+  }
+  nav .current {
+    -webkit-text-decoration: underline 1px;
+            text-decoration: underline 1px;
+    text-underline-offset: 5px;
+  }
+  
+  header {
+    padding-bottom: 50px;
+    border-bottom: 0.3em solid rgba(188, 187, 189, 0.137254902);
+  }
+  
+  /* Container de tous le corps du site */
+  .container {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-right: 102px;
+    margin-left: 102px;
+    border: 0.3em solid rgba(188, 187, 189, 0.137254902);
+    border-top: none;
+    max-width: 100%;
+  }
+  
+  /* Annimation des logos qui passent aux jaunes */
+  .logo {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .logo:hover {
+    filter: invert(13%) sepia(70%) saturate(5);
+  }
+  
+  body {
+    background-image: url(../Illustrations_game/Batgame_1.png);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: #000000;
+    font-family: "spacegrotesk";
+    overflow-x: hidden;
+    -webkit-animation: body 2s ease-out forwards;
+            animation: body 2s ease-out forwards;
+  }
+  
+  /* Annimation venant de la droite pour tous les éléments sauf les social-icons */
+  body:not(.social-icons) {
+    -webkit-animation: body 2s ease-out;
+            animation: body 2s ease-out;
+  }
+  
+  @-webkit-keyframes body {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes body {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  /* Les sections heros*/
+  .hero {
+    font-size: 20px;
+    color: white;
+    max-width: 550px;
+    margin: 3em;
+    text-align: center;
+    height: 350px;
+  }
+  
+  .hero p {
+      font-size: 35px;
+      text-transform: uppercase;
+      width: 300px;
+      text-align: left;
+  }
+  
+  .hero p {
+    justify-content: center;
+    margin-top: 150px;
+  }
+  
+  .hero a {
+    justify-content: center;
+  }
+  
+  .fleche div img{
+      position: absolute;
+      left: 47%;
+      margin: 2em auto;
+  }
+  
+  #quiz {
+      margin: 15em auto;
+  }
+  
+  #quiz p{
+      font-size: 25px;
+      color: white;
+      text-align: center;
+      margin-bottom: 1em;
+  }
+  
+  #quiz img{
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+  }
+  
+  button {
+      display: block;
+      height: 50px;
+      width: 200px;
+      margin: 4em auto;
+      font-family: "rajdhani";
+      color: white;
+      font-size: 15px;
+      background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+      cursor: pointer;
+      border: 0;
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 0, 9, 0.411) 100%);
+  }
+  
+  /* Les icons média sur la droite */
+  .social-icons {
+    position: fixed;
+    right: 22px;
+    top: 230px;
+    z-index: 9999;
+  }
+  
+  .social-icons a{
+    margin-bottom: 10px;
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+  }
+  
+  
+  /* footer */
+  footer {
+    margin-bottom: 25em;
+  }
+  
+  .copyright {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .copyright label {
+    font-size: 10px;
+  }
+  
+  /* Les icones tout en bas */
+  .icons-footer {
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  
+  .icons-footer img {
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Responsivité */
+  @media screen and (max-width: 1000px) {
+    section {
+      padding: 0px 10px 0px 10px;
+    }
+    .hero p {
+      margin-top: 1em;
+    }
+    .social-icons img {
+      margin-right: -90px;
+      width: 200%;
+    }
+    .social-icons .bat {
+      margin-right: -90px;
+      width: 450%;
+    }
+    .card-section {
+      display: inline;
+    }
+    .article {
+      width: 90%;
+      font-size: 1.2em;
+      padding-left: 5%;
+    }
+    .card-section .card img {
+      width: 30%;
+      height: auto;
+    }
+    .batman {
+      visibility: hidden;
+    }
+    .container {
+      justify-content: center;
+      margin: 10px;
+      padding: 0;
+    }
+    .card-multimedia img {
+      width: 20%;
+    }
+    .bande-annonce img {
+      width: 80%;
+      height: auto;
+      padding: 2em;
+      align-items: center;
+      justify-content: center;
+    }
+    .justiceLeague {
+      justify-content: center;
+      padding-top: 25em;
+    }
+    .text-m {
+      margin-top: 500px;
+    }
+    #formulaire-contact {
+      width: 70%;
+    }
+    footer .copyright {
+      margin-left: 0;
+    }
+    .icons-footer .logo {
+      width: 1.5rem;
+    }
+  }
+  @media screen and (max-width: 869px) {
+    .card-multimedia {
+      background-color: #19587D;
+    }
+    .card-multimedia img {
+      display: none;
+      background-color: #19587D;
+    }
+    .card-multimedia .text {
+      width: 100%;
+      background-color: #19587D;
+    }
+    .text-m {
+      margin-top: 500px;
+    }
+    .bande-annonce {
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+    }
+    .formulaire-contact {
+      padding: 0;
+      margin: 0;
+      width: 150%;
+    }
+    .citation {
+      display: inline-block;
+      text-align: center;
+    }
+    .citation .text-citation {
+      display: inline-block;
+      text-align: center;
+    }
+    .quot-o img {
+      margin-top: 2rem;
+    }
+    .quot-f img {
+      margin-top: 1rem;
+    }
+    footer .copyright {
+      margin-left: 0;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .hero .fleche {
+      margin-top: 100px;
+    }
+    .article {
+      font-size: 1.1em;
+    }
+    .text-m {
+      margin-top: 400px;
+    }
+    .bande-annonce img {
+      padding: 0;
+      margin: 0;
+    }
+    footer .quot-o {
+      width: 40px;
+      height: auto;
+      margin-left: 2em;
+    }
+    footer .quot-f {
+      width: 40px;
+      height: auto;
+      margin-left: 0;
+    }
+    footer .copyright {
+      margin-left: 0;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    nav ul {
+      visibility: hidden;
+    }
+    .social-icons img {
+      width: 150%;
+    }
+    .social-icons .bat {
+      width: 200%;
+    }
+    .hero .fleche {
+      margin-top: 100px;
+    }
+    .container {
+      margin: 0;
+    }
+    .article {
+      font-size: 1em;
+    }
+    .text-m {
+      margin-top: 400px;
+    }
+    footer .quot-o {
+      width: 40px;
+      height: auto;
+      margin-left: 2em;
+    }
+    footer .quot-f {
+      width: 40px;
+      height: auto;
+      margin-left: 0;
+    }
+    footer .copyright {
+      margin-left: 0;
+    }
+  }
