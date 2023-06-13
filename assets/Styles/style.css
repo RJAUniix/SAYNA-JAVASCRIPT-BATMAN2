@@ -25,6 +25,32 @@
   font-weight: normal;
   font-style: normal;
 }
+/* footer */
+footer {
+  margin-top: 100px;
+  /* Les icones tout en bas */
+}
+footer .copyright {
+  width: 100%;
+  margin-top: 3em;
+  right: 0;
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+footer .copyright label {
+  font-size: 10px;
+}
+footer .icons-footer {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+footer .icons-footer img {
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Général */
 * {
   margin: 0;
@@ -114,12 +140,12 @@ body {
 }
 
 /* Annimation venant de la droite pour tous les éléments sauf les social-icons */
-body:not(.social-icons) {
-  -webkit-animation: body 2s ease-out;
-          animation: body 2s ease-out;
+section {
+  -webkit-animation: section 2s ease-out;
+          animation: section 2s ease-out;
 }
 
-@-webkit-keyframes body {
+@-webkit-keyframes section {
   from {
     opacity: 0;
     transform: translateX(-100%);
@@ -130,7 +156,7 @@ body:not(.social-icons) {
   }
 }
 
-@keyframes body {
+@keyframes section {
   from {
     opacity: 0;
     transform: translateX(-100%);
@@ -182,7 +208,7 @@ button:hover {
 .social-icons {
   position: fixed;
   right: 22px;
-  top: 230px;
+  top: 200px;
   z-index: 9999;
 }
 .social-icons a {
@@ -520,33 +546,6 @@ section .card-section img {
 .citation .quot-f img {
   position: relative;
   margin-top: 200px;
-}
-
-/* footer */
-footer {
-  margin-top: 100px;
-  margin-bottom: 200px;
-  /* Les icones tout en bas */
-}
-footer .copyright {
-  width: 100%;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  justify-content: center;
-  color: white;
-}
-footer .copyright label {
-  font-size: 10px;
-}
-footer .icons-footer {
-  margin-top: 10px;
-  margin-bottom: 50px;
-}
-footer .icons-footer img {
-  margin-left: 20px;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 /* Responsivité */

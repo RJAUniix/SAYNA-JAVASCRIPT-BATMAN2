@@ -1,6 +1,7 @@
 
 @import "Partials/colors";
 @import "Partials/fonts";
+@import "Partials/footer";
 
 /* Général */
 *{
@@ -97,11 +98,11 @@ body {
 }
 
 /* Annimation venant de la droite pour tous les éléments sauf les social-icons */
-body:not(.social-icons) {
-    animation: body 2s ease-out;
+section {
+    animation: section 2s ease-out;
 }
 
-@keyframes body {
+@keyframes section {
     from {
       opacity: 0;
       transform: translateX(-100%);
@@ -159,7 +160,7 @@ button:hover{
 .social-icons {
     position: fixed;
     right: 22px;
-    top: 230px;
+    top: 200px;
     z-index: 9999;
 
     a{
@@ -538,37 +539,6 @@ section {
     .quot-f img{
         position: relative;
         margin-top: 200px;
-    }
-}
-
-/* footer */
-footer {
-    margin-top: 100px;
-    margin-bottom: 200px;
-
-    .copyright {
-        width: 100%;
-        position: absolute;
-        right: 0;
-        text-align: center;
-        justify-content: center;
-        color: white;
-    
-        label{
-            font-size: 10px;
-        }
-    }
-
-    /* Les icones tout en bas */
-    .icons-footer {
-        margin-top: 10px;
-        margin-bottom: 50px;
-
-        img{
-            margin-left: 20px;
-            display: inline-block;
-            vertical-align: middle;
-        }        
     }
 }
 

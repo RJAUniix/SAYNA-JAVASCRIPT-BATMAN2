@@ -42,3 +42,14 @@ if (targetElement) {
 
 
 // Quiz
+const BtnStart = document.getElementById("start-btn");
+const fleche = document.querySelector('.fleche');
+const SectionStart = document.getElementById("start");
+const QuizSection = document.getElementById("quiz");
+
+BtnStart.addEventListener('click', () => {
+    SectionStart.style.display = "none";
+    fleche.style.visibility = "hidden";
+    QuizSection.style.display = "block";
+});
+

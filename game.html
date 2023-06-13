@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batman Project | Game</title>
     <link rel="stylesheet" href="assets/Styles/game.css">
+    <script src="assets/script.js" defer></script>
 </head>
 <body>
     <div class="container" id="container">
@@ -43,11 +44,30 @@
                 </div>
             </section>
 
-            <section id="quiz">
+            <section id="start">
                 <p>CONNAISSEZ VOUS BIEN LE CHEVALIER NOIR ?</p>
                 <img src="assets/Illustrations_game/Batgame_2.png" alt="Photo de batman">
-                <button>DEMARRER LE QUIZ</button>
+                <button id="start-btn">DEMARRER LE QUIZ</button>
             </section>
+
+            <section id="quiz">
+                <div id="index_question">
+                    <p><span id="num_question"></span>/15</p>
+                </div>
+                <div id="quiz-content">
+                    <img src="assets/Illustrations_game/Batgame_3.png" alt="Photo spécifique pour la question">
+                    <div id="question">
+                        <p>Quel est l'autre nom de l'homme mystère ?</p>
+                        <span><input type="checkbox" name="proposition1" id="proposition1"><label for="proposition1">Le sphinx</label></span>
+                        <span><input type="checkbox" name="proposition2" id="proposition2"><label for="proposition2">Saphir</label></span>
+                        <span><input type="checkbox" name="proposition3" id="proposition3"><label for="proposition3">Le joker</label></span>
+                    </div>
+                </div>
+                <div>
+                    <button>Question suivante</button>
+                </div>
+            </section>
+
             
         </main>
 
