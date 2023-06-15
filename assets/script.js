@@ -53,3 +53,13 @@ BtnStart.addEventListener('click', () => {
     QuizSection.style.display = "block";
 });
 
+// Fonction pour prendre les données en utilisant fetch
+async function fetcher() {
+    const donnees = await fetch('');
+    if(donnees.ok == true){
+        return donnees.json();
+    }
+    throw new Error ('Impossible de contacter le serveur');
+
+}
+fetcher().then(dataQuestions = console.log(dataQuestions));
