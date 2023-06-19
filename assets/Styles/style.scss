@@ -186,6 +186,17 @@ section {
         width: 17em;
         height: auto;
         }
+
+        .perso {
+            background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 10%, rgba(219, 5, 19, 0.411) 100%);
+            width: 200px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 50px;
+            padding: 12px;
+            line-height: 17px;
+            font-size: 12px;
+        }
     }
 }
 
@@ -199,23 +210,31 @@ section {
     line-height: 1.2em;
 }
 
+/* Annimation des div */
 .card {
     border-radius: 5px;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-/* Annimation des div */
-.card-section img {
-    transition: all 0.5s ease-out; /* Animation de 0,5s avec un effet de transition doux */
+    transition: all 0.5s ease-out; 
 
     &:hover {
         transform: scale(1.1);
     }
-
 }
 
+// Les div dans les cards
+.card div {
+    border: 1px solid white;
+    position: relative;
+    top: -102px;
+    width: 272px;
+    height: 100px;
+    display: none;
+    margin: 0 auto;
+    padding: 10px;
+    transition: all 3s ease-out; 
+}
 
 .card p{
     color: white;
@@ -544,14 +563,15 @@ section {
 
 
 /* Responsivité */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1120px) {
     section{padding: 0px 10px 0px 10px;}
-    .hero p{margin-top: 1em;}
+    .hero p{margin-top: 10em;}
     .social-icons img{margin-right: -90px; width: 200%;}
     .social-icons .bat{margin-right: -90px; width: 450%;}
     .card-section {display: inline;}
     .article {width: 90%; font-size: 1.2em; padding-left: 5% ;}
-    .card-section .card img{width: 30%; height: auto;}
+    .card-section .card div{width: 90%; height: auto;}
+    .card-section .card img{width: 90%; height: auto;}
     .batman {visibility: hidden;}
     .container {justify-content: center; margin: 10px; padding: 0;}
     .card-multimedia img{width: 20%;}
@@ -580,6 +600,7 @@ section {
 @media screen and (max-width: 700px) {
     .hero .fleche{margin-top: 100px;}
     .article {font-size: 1.1em;}
+    .card-section {display: block; margin: 0 auto;}
     .text-m{margin-top: 400px;}
     .bande-annonce img{padding: 0; margin: 0;}
     footer .quot-o{width: 40px; height: auto; margin-left: 2em;}

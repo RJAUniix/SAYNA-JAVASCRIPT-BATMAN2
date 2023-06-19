@@ -233,6 +233,16 @@ section .card-section img {
   width: 17em;
   height: auto;
 }
+section .card-section .perso {
+  background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 10%, rgba(219, 5, 19, 0.411) 100%);
+  width: 200px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 50px;
+  padding: 12px;
+  line-height: 17px;
+  font-size: 12px;
+}
 
 .article {
   width: 90%;
@@ -243,19 +253,28 @@ section .card-section img {
   line-height: 1.2em;
 }
 
+/* Annimation des div */
 .card {
   border-radius: 5px;
   justify-content: center;
   align-items: center;
   text-align: center;
+  transition: all 0.5s ease-out;
+}
+.card:hover {
+  transform: scale(1.1);
 }
 
-/* Annimation des div */
-.card-section img {
-  transition: all 0.5s ease-out; /* Animation de 0,5s avec un effet de transition doux */
-}
-.card-section img:hover {
-  transform: scale(1.1);
+.card div {
+  border: 1px solid white;
+  position: relative;
+  top: -102px;
+  width: 272px;
+  height: 100px;
+  display: none;
+  margin: 0 auto;
+  padding: 10px;
+  transition: all 3s ease-out;
 }
 
 .card p {
@@ -549,12 +568,12 @@ section .card-section img {
 }
 
 /* Responsivité */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1120px) {
   section {
     padding: 0px 10px 0px 10px;
   }
   .hero p {
-    margin-top: 1em;
+    margin-top: 10em;
   }
   .social-icons img {
     margin-right: -90px;
@@ -572,8 +591,12 @@ section .card-section img {
     font-size: 1.2em;
     padding-left: 5%;
   }
+  .card-section .card div {
+    width: 90%;
+    height: auto;
+  }
   .card-section .card img {
-    width: 30%;
+    width: 90%;
     height: auto;
   }
   .batman {
@@ -659,6 +682,10 @@ section .card-section img {
   }
   .article {
     font-size: 1.1em;
+  }
+  .card-section {
+    display: block;
+    margin: 0 auto;
   }
   .text-m {
     margin-top: 400px;
