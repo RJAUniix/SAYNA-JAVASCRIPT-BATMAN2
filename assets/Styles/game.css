@@ -238,6 +238,7 @@ section {
   margin: 20% auto;
   width: 70%;
   color: white;
+  /* Popup */
 }
 #quiz #index_question p {
   font-size: 35px;
@@ -290,6 +291,25 @@ section {
 #quiz #quiz-content #question label {
   margin-left: 15px;
   font-size: 1.2em;
+  color: white;
+}
+#quiz .popup {
+  background: linear-gradient(118deg, rgba(126, 125, 125, 0.9921568627) 10%, rgba(70, 23, 23, 0.9607843137) 80%);
+  width: 700px;
+  height: 25em;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.5s;
+}
+#quiz .popup h1 {
+  margin-top: 25%;
   color: white;
 }
 #quiz button {
