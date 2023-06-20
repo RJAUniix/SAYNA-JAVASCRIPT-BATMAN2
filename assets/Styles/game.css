@@ -305,12 +305,15 @@ section {
   text-align: center;
   padding: 0 30px 30px;
   color: #333;
-  visibility: hidden;
   transition: transform 0.5s;
 }
 #quiz .popup h1 {
   margin-top: 25%;
   color: white;
+}
+#quiz .popup-ouvert {
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
 }
 #quiz button {
   display: block;

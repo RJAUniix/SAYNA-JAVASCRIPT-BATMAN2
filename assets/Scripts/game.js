@@ -122,7 +122,6 @@ function checkAnswer() {
         let selectedAnswer = options.querySelector('.selected').textContent;
         if(selectedAnswer.trim() == HTMLDecode(correctAnswer)){
             score++;
-            console.log(correctAnswer);
         }
         checkCount();
     }
@@ -142,7 +141,7 @@ function checkCount() {
     count++;
     setCount();
     if(count == nombreQuestion){
-        popup.style.display = 'block';
+        console.log(score);
     }
     else{
         setTimeout(() => {
