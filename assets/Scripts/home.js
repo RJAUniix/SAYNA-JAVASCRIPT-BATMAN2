@@ -14,20 +14,24 @@ function afficherPopup(){
 }
 
 // Les annimation sur les cards en hover
-const carte = document.querySelector('.card');
+const cards = document.querySelectorAll('.card');
+// Parcourez chaque div "card" et ajoutez un gestionnaire d'événements pour l'événement "mouseenter"
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    // Sélectionnez le div enfant de la carte actuelle
+    const perso = card.querySelector('div');
+    // Modifiez le style du div enfant pour l'afficher
+    perso.style.display = 'block';
+  });
 
-// carte.addEventListener('onmouseover', afficherPerso);
-// carte.addEventListener('onmouseout', cacherPerso);
-
-function afficherPerso(e) {
-    let perso = document.querySelector('.desc');
-    perso = e.target.getAttribute("class");
-    console.log(perso);
-}
-function cacherPerso() {
-    let perso = document.querySelector('.desc');
-    perso.style.display = "none";
-}
+  // Ajoutez également un gestionnaire d'événements pour l'événement "mouseleave" pour masquer le div enfant lorsque le survol est terminé
+  card.addEventListener('mouseleave', () => {
+    // Sélectionnez à nouveau le div enfant
+    const perso = card.querySelector('div');
+    // Modifiez le style du div enfant pour le masquer
+    perso.style.display = 'none';
+  });
+});
 
 // Fonction pour effectuer le défilement en douceur
 const links = document.querySelectorAll('a[href^="#"]');
@@ -49,3 +53,21 @@ if (targetElement) {
     });
 }
 }
+
+// Fonction pour gérer l'apparition progressive des éléments au scrolling
+// function handleScroll() {
+//     var items = document.querySelectorAll('section');
+  
+//     items.forEach(function(section) {
+//       if (isElementInViewport(section)) {
+//         section.style.opacity = '1';
+//         section.style.transform = 'translateX(0)';
+//       }
+//     });
+//   }
+  
+//   // Écouteur d'événement pour déclencher la fonction handleScroll() au scrolling
+//   window.addEventListener('scroll', handleScroll);
+  
+//   // Appeler handleScroll() une fois au chargement initial de la page pour vérifier les éléments déjà visibles
+//   handleScroll();

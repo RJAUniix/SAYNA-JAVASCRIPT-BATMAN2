@@ -20,25 +20,33 @@ if (targetElement) {
 }
 
 
-// Quizlet 
-popup = document.getElementById("popup");
+// Quiz
+
 const BtnStart = document.querySelector("#start-btn");
-const fleche = document.querySelector('.fleche');
+const fleche = document.querySelector(".fleche");
 const SectionStart = document.querySelector("#start");
 const QuizSection = document.querySelector("#quiz");
 const nextBtn = document.querySelector("#nextBtn");
 const restartBtn = document.querySelector("#restartBtn");
+const popup = document.querySelector("#popup");
+const quizImg = document.querySelector("#quizImg");
+// contenu du popup
+const popupPara = document.querySelector("#encouragement");
+const popupTitre = document.querySelector("#titrePopup");
+
 // Pour régler la liste de proposition
 const list = document.querySelector('.test');
 const proposition = document.querySelector('.proposition');
+
 // Les données dans le quiz
 const question = document.querySelector('#question');
 const options = document.querySelector('.quiz_options');
 const totalQuestion = document.querySelector('#nombre_question');
 const numQuestion = document.querySelector('#num_question');
 const correctScore = document.querySelector('#score');
+
 // initialisation
-let correctAnswer = "", score = 0, nombreQuestion = 12 , count = 1;
+let correctAnswer = "", score = 5, nombreQuestion = 12 , count = 1, srcImg = "";
 
 function eventListeners() {
     nextBtn.addEventListener('click', checkAnswer);
@@ -50,6 +58,8 @@ BtnStart.addEventListener('click', () => {
     SectionStart.style.display = "none";
     fleche.style.visibility = "hidden";
     QuizSection.style.display = "block";
+    setComment();
+    popup.classList.add("popup-ouvert");
 });
 
 // Afficher le numéro de question
@@ -75,14 +85,23 @@ async function loadQuestion() {
     // Pour régler l'erreur dans la quetion 5
     data[4].response[2].isGood = true;
 
+    // Pour attribuer l'src de chaque images
+    for(let i = 0; i <= 11 ; i++){
+        data[i].img = "./Illustrations_game/Batgame_"+i+".png";
+    }
+
     showQuestion(data[count]);
 }
 
 function showQuestion(data) { 
     let incorrectAnswer = [];
+
+    // Mettre à jour l'image
+    quizImg.setAttribute('src',data.img);
+
     for (let i = 0 ; i < data.response.length ; i++) {
         if (data.response[i].isGood === true) {
-          correctAnswer = data.response[i].text;
+            correctAnswer = data.response[i].text;
         } 
         else {
             incorrectAnswer.push(data.response[i].text);
@@ -157,8 +176,29 @@ function setCount() {
     numQuestion.textContent = count;
 }
 
+// Pour adapter le popup à chaque résultat
+function setComment() {
+    if (score <= 5) {
+        popupTitre.textContent = " C'est pas tout a fait ça...";
+        popupPara.textContent = "Oula, heureusement que le Riddler est sous les verrous... Il faut que vous vous repassiez les films, cette fois en enlevant peut-être le masque qui vous a bloqué la vu! Aller rien n'est perdu.";
+    }
+    else if (score <= 11) {
+        popupTitre.textContent = " Pas mal !";
+        popupPara.textContent = "Encore un peu d'entraînement avec le Chevalier Noir vous serait bénéfique, mais vous pouvez marcher la tête haute vos connaissances sont là. A vous de les consolider, foncer Gotham est votre terrain de chasse !";
+    }
+    else if (score = 12) {
+        popupTitre.textContent = " Bravo !";
+        popupPara.textContent = "Vous êtes véritablement un super fan de l'univer de Batman ! Comics, films, rien en vous échappe. Bruce Wayne a de qui être fier. Gotham est en paix et Batman peut prendre sa retraite, vous veillez au grains !";
+    }
+    else {
+        popupTitre.textContent = "lfsdfsdfsdfsdf";
+        popupPara.textContent = "sdfsqdfsqdfsdfsdfsqdf";
+    }
+}
+
 // Fonction restart quiz
 function restartQuiz() {
     score = count = 0;
     setCount();
 }
+

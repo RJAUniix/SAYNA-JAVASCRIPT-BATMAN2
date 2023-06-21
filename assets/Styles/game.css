@@ -23,6 +23,7 @@
   --blanc: #FFFFFF;
   --gradient-bleue: linear-gradient(to right, #fdfdfd7e 10%, #146696c2 60%);
   --gradient-rouge: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+  --gradient-orange: linear-gradient(to right, rgba(237, 222, 223, 0.349) 20%, rgba(163, 54, 4, 0.356) 100%);
 }
 
 /* footer */
@@ -224,12 +225,12 @@ section {
   font-family: "rajdhani";
   color: white;
   font-size: 15px;
-  background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+  background: var(--gradient-orange);
   cursor: pointer;
   border: 0;
 }
 #start button:hover {
-  background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 0, 9, 0.411) 100%);
+  background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 62, 0, 0.411) 100%);
 }
 
 #quiz {
@@ -294,9 +295,9 @@ section {
   color: white;
 }
 #quiz .popup {
-  background: linear-gradient(118deg, rgba(126, 125, 125, 0.9921568627) 10%, rgba(70, 23, 23, 0.9607843137) 80%);
-  width: 700px;
-  height: 25em;
+  background: linear-gradient(118deg, #0c0501 10%, #412b17 80%);
+  width: 800px;
+  height: 35em;
   border-radius: 15px;
   position: absolute;
   top: 50%;
@@ -304,12 +305,29 @@ section {
   transform: translate(-50%, -50%) scale(0.1);
   text-align: center;
   padding: 0 30px 30px;
-  color: #333;
+  visibility: hidden;
   transition: transform 0.5s;
 }
-#quiz .popup h1 {
-  margin-top: 25%;
+#quiz .popup h2 {
+  font-size: 30px;
+  margin-top: 10%;
+  margin-bottom: 15%;
   color: white;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+#quiz .popup p {
+  color: rgb(255, 255, 255);
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+}
+#quiz .popup button {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
 }
 #quiz .popup-ouvert {
   transform: translate(-50%, -50%) scale(1);
@@ -323,7 +341,7 @@ section {
   font-family: "rajdhani";
   color: white;
   font-size: 15px;
-  background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 20%, rgba(245, 139, 0, 0.541) 100%);
+  background: var(--gradient-orange);
   cursor: pointer;
   border: 0;
 }

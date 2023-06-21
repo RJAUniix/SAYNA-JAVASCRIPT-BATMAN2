@@ -10,6 +10,7 @@
   --blanc: #FFFFFF;
   --gradient-bleue: linear-gradient(to right, #fdfdfd7e 10%, #146696c2 60%);
   --gradient-rouge: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+  --gradient-orange: linear-gradient(to right, rgba(237, 222, 223, 0.349) 20%, rgba(163, 54, 4, 0.356) 100%);
 }
 
 /* Les polices */
@@ -236,7 +237,6 @@ section .card-section img {
 section .card-section .perso {
   background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 10%, rgba(219, 5, 19, 0.411) 100%);
   width: 200px;
-  display: block;
   margin: 10px auto;
   border-radius: 50px;
   padding: 12px;
@@ -259,7 +259,7 @@ section .card-section .perso {
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: all 0.5s ease-out;
+  transition: all 3s ease-out;
 }
 .card:hover {
   transform: scale(1.1);

@@ -48,19 +48,19 @@
                 </div>
 
                 <div class="card-section">
-                    <div class="card" onmouseover="afficherPerso();" onmouseout="cacherPerso();"> 
+                    <div class="card"> 
                         <img src="assets/Illustrations/Bathome2.png" alt="Photo de batman">
                         <div class="desc">
                             <p class="perso">Robert Pattinson <br>(2022)</p>
                         </div> 
                     </div>
-                    <div class="card" onmouseover="afficherPerso();" onmouseout="cacherPerso();">
+                    <div class="card">
                         <img src="assets/Illustrations/Bathome3.png" alt="Photo de batman">
                         <div class="desc">
                             <p class="perso">Christian Bale <br>(2006 - 2008 - 2012)</p>
                         </div> 
                     </div>
-                    <div class="card" onmouseover="afficherPerso();" onmouseout="cacherPerso();">
+                    <div class="card">
                         <img src="assets/Illustrations/Bathome4.png" alt="Photo de batman">
                         <div class="desc">
                             <p class="perso">Ben Affleck <br>20016- 2017/2020 – 2023</p>
@@ -255,7 +255,24 @@
                     </div>
                 </div>
             </footer>
-            
         </div>
+        <script>
+            function handleScroll() {
+            var items = document.querySelectorAll('.card');
+            
+            items.forEach(function(card) {
+                if (isElementInViewport(card)) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateX(-50)';
+                }
+                });
+            }
+            
+            // Écouteur d'événement pour déclencher la fonction handleScroll() au scrolling
+            window.addEventListener('scroll', handleScroll);
+            
+            // Appeler handleScroll() une fois au chargement initial de la page pour vérifier les éléments déjà visibles
+            handleScroll();
+        </script>
 </body>
 </html>

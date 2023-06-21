@@ -172,12 +172,12 @@
         font-family: "rajdhani";
         color: white;
         font-size: 15px;
-        background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 40%, rgba(137, 0, 9, 0.356) 100%);
+        background: var(--gradient-orange);
         cursor: pointer;
         border: 0;
   
         &:hover {
-          background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 0, 9, 0.411) 100%);
+          background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 62, 0, 0.411) 100%);
         }
     }
   }
@@ -252,9 +252,9 @@
 
     /* Popup */
     .popup {
-      background: linear-gradient(118deg , #7e7d7dfd 10%, #461717f5 80%);
-      width: 700px;
-      height: 25em;
+      background: linear-gradient(118deg , #0c0501 10%, #412b17 80%);
+      width: 800px;
+      height: 35em;
       border-radius: 15px;
       position: absolute;
       top: 50%;
@@ -262,12 +262,29 @@
       transform: translate(-50%,-50%) scale(0.1);
       text-align: center;
       padding: 0 30px 30px;
-      color: #333;
+      visibility: hidden;
       transition: transform 0.5s;
 
-      h1{
-          margin-top: 25%;
+      h2{
+          font-size: 30px;
+          margin-top: 10%;
+          margin-bottom: 15%;
           color: white;
+          text-decoration: underline;
+          text-transform: uppercase;
+      }
+      p {
+        color: rgb(255, 255, 255);
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+        letter-spacing: 1px;
+        line-height: 1.2em;
+      }
+      button {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 700;
       }
     }
 
@@ -276,23 +293,23 @@
       visibility: visible;
     }
 
-      button {
-          display: block;
-          height: 50px;
-          width: 300px;
-          margin: 5em auto;
-          font-family: "rajdhani";
-          color: white;
-          font-size: 15px;
-          background: linear-gradient(to right, rgba(237, 222, 223, 0.349) 20%,  rgba(245, 139, 0, 0.541) 100%);
-          cursor: pointer;
-          border: 0;
-  
-          &:hover {
-          background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(245, 139, 0, 0.541) 100%);
-          }
+    button {
+      display: block;
+      height: 50px;
+      width: 300px;
+      margin: 5em auto;
+      font-family: "rajdhani";
+      color: white;
+      font-size: 15px;
+      background: var(--gradient-orange);
+      cursor: pointer;
+      border: 0;
+
+      &:hover {
+      background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(245, 139, 0, 0.541) 100%);
       }
     }
+  }
 
   /* Les icons média sur la droite */
   .social-icons {

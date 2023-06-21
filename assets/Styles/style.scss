@@ -190,7 +190,7 @@ section {
         .perso {
             background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 10%, rgba(219, 5, 19, 0.411) 100%);
             width: 200px;
-            display: block;
+            // display: block;
             margin: 10px auto;
             border-radius: 50px;
             padding: 12px;
@@ -216,7 +216,7 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: all 0.5s ease-out; 
+    transition: all 3s ease-out; 
 
     &:hover {
         transform: scale(1.1);

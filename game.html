@@ -57,7 +57,7 @@
                     <p><span id="num_question"></span>/<span id="nombre_question"></span></p>
                 </div>
                 <div id="quiz-content">
-                    <img src="assets/Illustrations_game/Batgame_3.png" alt="Photo spécifique pour la question">
+                    <img id="quizImg" src="assets/Illustrations_game/Batgame_3.png" alt="Photo spécifique pour la question">
                     <div id="question">
                         <p id='question_text'></p>
                         <ul class="quiz_options">
@@ -70,15 +70,14 @@
                 <div>
                     <button id="nextBtn">Question suivante</button>
                 </div>
-            </section>
-
-            <!-- Popup du game -->
-            <div id="popup" class="popup-ouvert">
-                <h1>Bravo!</h1>
-                <p>Vottre score est de : <span id="score"></span></p>
-            </div>
-
-            
+                
+                <!-- Popup du game -->
+                <div id="popup" class="popup">
+                    <h2 id="resultat"><span id="score"></span>/12<span id="titrePopup"></span></h2>
+                    <p id="encouragement"></p>
+                    <button id="restartQuiz">Recommencer le quiz</button>
+                </div>
+            </section>            
         </main>
 
         <!-- Le Footer -->
