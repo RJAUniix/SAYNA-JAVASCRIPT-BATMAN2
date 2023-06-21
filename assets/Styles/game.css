@@ -255,24 +255,29 @@ section {
 }
 #quiz #quiz-content img {
   float: left;
+  width: 200px;
+  height: auto;
 }
 #quiz #quiz-content #question {
-  margin-top: 1em;
+  margin: 2em;
   width: 50%;
+  vertical-align: center;
 }
-#quiz #quiz-content #question p {
+#quiz #quiz-content #question p #question_text {
   font-size: 15px;
   letter-spacing: 2px;
-  margin-top: 30px;
-  margin-bottom: 40px;
+}
+#quiz #quiz-content #question ul {
+  margin: 0;
+  padding: 0;
 }
 #quiz #quiz-content #question li {
-  display: block;
-  margin: 10px;
+  display: flex;
+  align-items: center;
   width: 125%;
   background-color: gray;
-  margin: 0.7rem 1rem;
-  padding: 0.2rem 0.4rem;
+  margin-top: 1rem;
+  padding: 0.4rem;
   cursor: pointer;
   font-weight: 600;
 }
@@ -286,7 +291,6 @@ section {
 #quiz #quiz-content #question input[type=checkbox] {
   width: 25px;
   height: 25px;
-  margin-top: 5px;
   margin-right: 20px;
 }
 #quiz #quiz-content #question label {

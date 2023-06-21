@@ -46,7 +46,7 @@ const numQuestion = document.querySelector('#num_question');
 const correctScore = document.querySelector('#score');
 
 // initialisation
-let correctAnswer = "", score = 0, nombreQuestion = 12 , count = 1, srcImg = "";
+let correctAnswer = "", score = 0, nombreQuestion = 12 , count = 0, srcImg = "";
 
 function eventListeners() {
     nextBtn.addEventListener('click', checkAnswer);
@@ -72,6 +72,10 @@ async function loadQuestion() {
     const APIUrl = 'https://batman-api.sayna.space/questions';
     const result = await fetch(APIUrl);
     const data = await result.json();
+    // Pour attribuer l'src de chaque images
+    for(let i = 0; i <= 11 ; i++){
+        data[i].img = "assets/Illustrations_game/Batgame_"+(i+3)+".png";
+    }
 
     // Pour régler l'erreur dans la quetion 1
     data[0].response[0].text = "Sphynx"; 
@@ -81,10 +85,7 @@ async function loadQuestion() {
     // Pour régler l'erreur dans la quetion 5
     data[4].response[2].isGood = true;
 
-    // Pour attribuer l'src de chaque images
-    for(let i = 0; i <= 11 ; i++){
-        data[i].img = "assets/Illustrations_game/Batgame_"+(i+2)+".png";
-    }
+    
 
     showQuestion(data[count]);
 }
@@ -94,6 +95,7 @@ function showQuestion(data) {
 
     // Mettre à jour l'image
     quizImg.setAttribute('src',data.img);
+    console.log(data);
 
     for (let i = 0 ; i < data.response.length ; i++) {
         if (data.response[i].isGood === true) {
@@ -119,12 +121,21 @@ function showQuestion(data) {
 // choix de réponse
 function selectOption() {
     options.querySelectorAll('li').forEach((option) => {
+        const checkbox = option.querySelector('input[type="checkbox"]');
+
         option.addEventListener('click', () => {
             if(options.querySelector('.selected')) {
+                // Désélectionne toutes les options
+                options.querySelectorAll('li').forEach((option) => {
+                    option.querySelector('input[type="checkbox"]').checked = false;
+                });
+                
                 const activeOption = options.querySelector('.selected');
                 activeOption.classList.remove('selected');
+                    
             }
             option.classList.add('selected');
+            checkbox.checked = true;
         });
     });
 }
@@ -170,7 +181,7 @@ function checkCount() {
 function setCount() {
     totalQuestion.textContent = nombreQuestion;
     correctScore.textContent = score;
-    numQuestion.textContent = count;
+    numQuestion.textContent = count+1;
 }
 
 // Pour adapter le popup à chaque résultat
@@ -188,22 +199,16 @@ function setComment() {
         popupPara.textContent = "Vous êtes véritablement un super fan de l'univer de Batman ! Comics, films, rien en vous échappe. Bruce Wayne a de qui être fier. Gotham est en paix et Batman peut prendre sa retraite, vous veillez au grains !";
     }
     else {
-        popupTitre.textContent = "lfsdfsdfsdfsdf";
-        popupPara.textContent = "sdfsqdfsqdfsdfsdfsqdf";
+        popupTitre.textContent = "Erreur";
+        popupPara.textContent = "Un problème est survenu lors du quiz, veuillez recommencer ultérieurement s'il vous plaît...";
     }
 }
 
 // Pour recommencer le quiz
-// restartBtn.addEventListener('click', () => {
-//     // score = count = 0;
-//     // popup.style.display = "none";  
-//     // showQuestion();
-//     alert('success');
-// });
 restartBtn.addEventListener('click', restartQuiz);
 function restartQuiz() {
     // Réinitialiser les variables
-    correctAnswer = "", score = 0, nombreQuestion = 12 , count = 1, srcImg = "";
+    correctAnswer = "", score = 0, nombreQuestion = 12 , count = 0, srcImg = "";
 
     // Réinitialiser les éléments du quiz
     options.innerHTML = "";
