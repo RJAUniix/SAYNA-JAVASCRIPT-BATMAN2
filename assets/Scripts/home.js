@@ -13,6 +13,27 @@ function afficherPopup(){
     }
 }
 
+// zoom progressif des images
+
+function checkVisibility() {
+  var cards = document.querySelectorAll('.card');
+
+  cards.forEach(function(card) {
+    var cardPosition = card.getBoundingClientRect().top;
+    var screenHeight = window.innerHeight;
+
+    if (cardPosition < screenHeight && !card.classList.contains('visible')) {
+      card.classList.add('visible');
+    } else if (cardPosition >= screenHeight && card.classList.contains('visible')) {
+      card.classList.remove('visible');
+    }
+  });
+  
+  card.classList.remove('visible');
+}
+
+window.addEventListener('scroll', checkVisibility);
+
 // Les annimation sur les cards en hover
 const cards = document.querySelectorAll('.card');
 // Parcourez chaque div "card" et ajoutez un gestionnaire d'événements pour l'événement "mouseenter"

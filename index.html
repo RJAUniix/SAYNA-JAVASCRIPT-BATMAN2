@@ -257,22 +257,6 @@
             </footer>
         </div>
         <script>
-            function handleScroll() {
-            var items = document.querySelectorAll('.card');
-            
-            items.forEach(function(card) {
-                if (isElementInViewport(card)) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateX(-50)';
-                }
-                });
-            }
-            
-            // Écouteur d'événement pour déclencher la fonction handleScroll() au scrolling
-            window.addEventListener('scroll', handleScroll);
-            
-            // Appeler handleScroll() une fois au chargement initial de la page pour vérifier les éléments déjà visibles
-            handleScroll();
         </script>
 </body>
 </html>

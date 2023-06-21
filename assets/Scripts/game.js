@@ -19,6 +19,37 @@ if (targetElement) {
 }
 }
 
+// Fade-in progressif de tous les éléments
+// Fonction pour vérifier si les éléments sont dans la vue lors du défilement
+function checkScroll() {
+    const windowHeight = window.innerHeight;
+  
+    // Vérifiez chaque élément fade-in
+    fadeElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+  
+      // Ajoutez la classe fade-in lorsque l'élément est dans la moitié inférieure de la fenêtre
+      if (elementTop < windowHeight * 0.5 && elementBottom > 0) {
+        element.classList.add('fade-in');
+      } else {
+        element.classList.remove('fade-in');
+      }
+    });
+  
+    // Vérifiez chaque élément slide-left
+    slideElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+  
+      // Ajoutez la classe slide-left lorsque l'élément est dans la moitié inférieure de la fenêtre
+      if (elementTop < windowHeight * 0.5 && elementBottom > 0) {
+        element.classList.add('slide-left');
+      } else {
+        element.classList.remove('slide-left');
+      }
+    });
+  }
 
 // Quiz
 
