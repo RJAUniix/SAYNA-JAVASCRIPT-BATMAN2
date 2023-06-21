@@ -27,7 +27,7 @@ const fleche = document.querySelector(".fleche");
 const SectionStart = document.querySelector("#start");
 const QuizSection = document.querySelector("#quiz");
 const nextBtn = document.querySelector("#nextBtn");
-const restartBtn = document.querySelector("#restartBtn");
+const restartBtn = document.querySelector("#restartQuiz");
 const popup = document.querySelector("#popup");
 const quizImg = document.querySelector("#quizImg");
 // contenu du popup
@@ -46,7 +46,7 @@ const numQuestion = document.querySelector('#num_question');
 const correctScore = document.querySelector('#score');
 
 // initialisation
-let correctAnswer = "", score = 5, nombreQuestion = 12 , count = 1, srcImg = "";
+let correctAnswer = "", score = 0, nombreQuestion = 12 , count = 1, srcImg = "";
 
 function eventListeners() {
     nextBtn.addEventListener('click', checkAnswer);
@@ -58,17 +58,13 @@ BtnStart.addEventListener('click', () => {
     SectionStart.style.display = "none";
     fleche.style.visibility = "hidden";
     QuizSection.style.display = "block";
-    setComment();
-    popup.classList.add("popup-ouvert");
 });
 
 // Afficher le numéro de question
 document.addEventListener('DOMContentLoaded', () => {
     loadQuestion();
     eventListeners();
-    totalQuestion.textContent = nombreQuestion;
-    numQuestion.textContent = count;
-    correctScore.textContent = score;
+    setCount();
 })
 
 // Fonction pour prendre les données en utilisant fetch
@@ -87,7 +83,7 @@ async function loadQuestion() {
 
     // Pour attribuer l'src de chaque images
     for(let i = 0; i <= 11 ; i++){
-        data[i].img = "./Illustrations_game/Batgame_"+i+".png";
+        data[i].img = "assets/Illustrations_game/Batgame_"+(i+2)+".png";
     }
 
     showQuestion(data[count]);
@@ -108,7 +104,6 @@ function showQuestion(data) {
         }
     }
     let optionList = incorrectAnswer;
-    console.log(incorrectAnswer.length);
     optionList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)),0,correctAnswer );
     // // Affichage de la quesiton 
     question.innerHTML = `${data.question}`;
@@ -160,7 +155,9 @@ function checkCount() {
     count++;
     setCount();
     if(count == nombreQuestion){
-        console.log(score);
+        setComment();
+        popup.classList.add("popup-ouvert");
+        QuizSection.style.display = "hidden";
     }
     else{
         setTimeout(() => {
@@ -196,9 +193,30 @@ function setComment() {
     }
 }
 
-// Fonction restart quiz
+// Pour recommencer le quiz
+// restartBtn.addEventListener('click', () => {
+//     // score = count = 0;
+//     // popup.style.display = "none";  
+//     // showQuestion();
+//     alert('success');
+// });
+restartBtn.addEventListener('click', restartQuiz);
 function restartQuiz() {
-    score = count = 0;
-    setCount();
-}
+    // Réinitialiser les variables
+    correctAnswer = "", score = 0, nombreQuestion = 12 , count = 1, srcImg = "";
 
+    // Réinitialiser les éléments du quiz
+    options.innerHTML = "";
+    numQuestion.textContent = count;
+    correctScore.textContent = score;
+
+    // Afficher la section de départ
+    QuizSection.style.display = "block";
+
+    // Réinitialiser le popup
+    popup.classList.remove("popup-ouvert");
+    popupPara.textContent = "";
+    popupTitre.textContent = "";
+    
+    loadQuestion();
+}
