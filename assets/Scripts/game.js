@@ -75,6 +75,30 @@ async function loadQuestion() {
     // Pour attribuer l'src de chaque images
     for(let i = 0; i <= 11 ; i++){
         data[i].img = "assets/Illustrations_game/Batgame_"+(i+3)+".png";
+        if(i == 3) {
+            data[i].img = "assets/Illustrations_game/Batgame_10.png";
+        }
+        else if(i == 4) {
+            data[i].img = "assets/Illustrations_game/Batgame_11.png";
+        }
+        else if(i == 6) {
+            data[i].img = "assets/Illustrations_game/Batgame_12.png";
+        }
+        else if(i == 7) {
+            data[i].img = "assets/Illustrations_game/Batgame_19.png";
+        }
+        else if(i == 8) {
+            data[i].img = "assets/Illustrations_game/Batgame_20.png";
+        }
+        else if(i == 9) {
+            data[i].img = "assets/Illustrations_game/Batgame_21.png";
+        }
+        else if(i == 10) {
+            data[i].img = "assets/Illustrations_game/Batgame_7.png";
+        }
+        else if(i == 11) {
+            data[i].img = "assets/Illustrations_game/Batgame_6.png";
+        }
     }
 
     // Pour régler l'erreur dans la quetion 1
@@ -85,8 +109,7 @@ async function loadQuestion() {
     // Pour régler l'erreur dans la quetion 5
     data[4].response[2].isGood = true;
 
-    
-
+    // Pour commencer le quiz
     showQuestion(data[count]);
 }
 
@@ -136,8 +159,11 @@ function selectOption() {
             }
             option.classList.add('selected');
             checkbox.checked = true;
+            
+            nextBtn.disabled = false;
         });
     });
+    
 }
 
 // Tester la réponse
@@ -150,10 +176,6 @@ function checkAnswer() {
         }
         checkCount();
     }
-    else {
-        alert('Choisissez une reponse svp...');
-    }
-    nextBtn.disabled = false;
 }
 // Définition de la fonction HTMLDecode
 function HTMLDecode(textString) {
@@ -163,18 +185,16 @@ function HTMLDecode(textString) {
 
 // Fonction pour les comptes
 function checkCount() {
-    count++;
-    setCount();
-    if(count == nombreQuestion){
+    if((count+1) == nombreQuestion){
         setComment();
         popup.classList.add("popup-ouvert");
         QuizSection.style.display = "hidden";
     }
     else{
-        setTimeout(() => {
-            loadQuestion();
-        }, 10);
+        loadQuestion();
+        count++;
     }
+    setCount();
 }
 
 // La fonction setCount
@@ -208,12 +228,10 @@ function setComment() {
 restartBtn.addEventListener('click', restartQuiz);
 function restartQuiz() {
     // Réinitialiser les variables
-    correctAnswer = "", score = 0, nombreQuestion = 12 , count = 0, srcImg = "";
+    correctAnswer = "", score = 0, count = 0;
 
     // Réinitialiser les éléments du quiz
-    options.innerHTML = "";
-    numQuestion.textContent = count;
-    correctScore.textContent = score;
+    setCount();
 
     // Afficher la section de départ
     QuizSection.style.display = "block";
