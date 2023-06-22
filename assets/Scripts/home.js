@@ -28,8 +28,6 @@ function checkVisibility() {
       card.classList.remove('visible');
     }
   });
-  
-  card.classList.remove('visible');
 }
 
 window.addEventListener('scroll', checkVisibility);

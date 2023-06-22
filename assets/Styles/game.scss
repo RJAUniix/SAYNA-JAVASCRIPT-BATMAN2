@@ -1,7 +1,8 @@
-/* Les polices et les couleurs*/
+/* Les partials*/
 @import "Partials/fonts";
 @import "Partials/colors";
 @import "Partials/footer";
+
   /* Général */
   * {
     margin: 0;
@@ -16,17 +17,6 @@
   p {
     font-size: 18px;
     font-family: "spacegrotesk";
-  }
-  
-
-  /* Effet slide-left */
-  .slide-left {
-    transform: translateX(-100%);
-    transition: transform 0.5s ease;
-  }
-
-  .slide-left.visible {
-    transform: translateX(0);
   }
 
   /* Navbar */
@@ -133,8 +123,8 @@
     text-align: center;
     height: 350px;
 
-    p {
-        font-size: 35px;
+    h1 {
+        font-size: 40px;
         text-transform: uppercase;
         width: 300px;
         text-align: left;
@@ -344,171 +334,67 @@
   }  
   
   /* Responsivité */
-  @media screen and (max-width: 1000px) {
-    section {
-      padding: 0px 10px 0px 10px;
-    }
-    .hero p {
-      margin-top: 1em;
-    }
-    .social-icons img {
-      margin-right: -90px;
-      width: 200%;
-    }
-    .social-icons .bat {
-      margin-right: -90px;
-      width: 450%;
-    }
-    .card-section {
-      display: inline;
-    }
-    .article {
-      width: 90%;
-      font-size: 1.2em;
-      padding-left: 5%;
-    }
-    .card-section .card img {
-      width: 30%;
-      height: auto;
-    }
-    .batman {
-      visibility: hidden;
-    }
-    .container {
-      justify-content: center;
-      margin: 10px;
-      padding: 0;
-    }
-    .card-multimedia img {
-      width: 20%;
-    }
-    .bande-annonce img {
-      width: 80%;
-      height: auto;
-      padding: 2em;
-      align-items: center;
-      justify-content: center;
-    }
-    .justiceLeague {
-      justify-content: center;
-      padding-top: 25em;
-    }
-    .text-m {
-      margin-top: 500px;
-    }
-    #formulaire-contact {
-      width: 70%;
-    }
-    footer .copyright {
-      margin-left: 0;
-    }
-    .icons-footer .logo {
-      width: 1.5rem;
-    }
-  }
-  @media screen and (max-width: 869px) {
-    .card-multimedia {
-      background-color: #19587D;
-    }
-    .card-multimedia img {
-      display: none;
-      background-color: #19587D;
-    }
-    .card-multimedia .text {
-      width: 100%;
-      background-color: #19587D;
-    }
-    .text-m {
-      margin-top: 500px;
-    }
-    .bande-annonce {
-      margin-top: 5vh;
-      margin-bottom: 5vh;
-    }
-    .formulaire-contact {
-      padding: 0;
-      margin: 0;
-      width: 150%;
-    }
-    .citation {
-      display: inline-block;
-      text-align: center;
-    }
-    .citation .text-citation {
-      display: inline-block;
-      text-align: center;
-    }
-    .quot-o img {
-      margin-top: 2rem;
-    }
-    .quot-f img {
-      margin-top: 1rem;
-    }
-    footer .copyright {
-      margin-left: 0;
-    }
-  }
-  @media screen and (max-width: 700px) {
-    .hero .fleche {
-      margin-top: 100px;
-    }
-    .article {
-      font-size: 1.1em;
-    }
-    .text-m {
-      margin-top: 400px;
-    }
-    .bande-annonce img {
-      padding: 0;
-      margin: 0;
-    }
-    footer .quot-o {
-      width: 40px;
-      height: auto;
-      margin-left: 2em;
-    }
-    footer .quot-f {
-      width: 40px;
-      height: auto;
-      margin-left: 0;
-    }
-    footer .copyright {
-      margin-left: 0;
-    }
-  }
-  @media screen and (max-width: 400px) {
-    nav ul {
-      visibility: hidden;
-    }
-    .social-icons img {
-      width: 150%;
-    }
-    .social-icons .bat {
-      width: 200%;
-    }
-    .hero .fleche {
-      margin-top: 100px;
-    }
-    .container {
-      margin: 0;
-    }
-    .article {
-      font-size: 1em;
-    }
-    .text-m {
-      margin-top: 400px;
-    }
-    footer .quot-o {
-      width: 40px;
-      height: auto;
-      margin-left: 2em;
-    }
-    footer .quot-f {
-      width: 40px;
-      height: auto;
-      margin-left: 0;
-    }
-    footer .copyright {
-      margin-left: 0;
-    }
-  }
+  
+/* Responsivité */
+@media screen and (max-width: 1120px) {
+  section{padding: 0px 10px 0px 10px;}
+  .hero p{margin-top: 10em;}
+  .social-icons img{margin-right: -90px; width: 200%;}
+  .social-icons .bat{margin-right: -90px; width: 450%;}
+  .card-section {display: inline;}
+  .article {width: 90%; font-size: 1.2em; padding-left: 5% ;}
+  .card-section .card .perso{width: 150px; height: 55px; padding: 8px; line-height: 11px;font-size: 8px;}
+  .card-section .card div{width: 70%; height: auto;}
+  .card-section .card img{width: 70%; height: auto;}
+  .batman {visibility: hidden;}
+  .container {justify-content: center; margin: 10px; padding: 0;}
+  .card-multimedia img{width: 20%;}
+  .bande-annonce img{width: 80%; height: auto; padding: 2em; align-items: center; justify-content: center;}
+  .justiceLeague{justify-content: center; padding-top: 25em;}
+  .text-m{margin-top: 500px;}
+  #formulaire-contact{width: 70%;}
+  footer .copyright{margin-left: 0;}
+  .icons-footer .logo{width: 1.5rem;}
+}
+
+@media screen and (max-width: 869px) {
+  .card-multimedia {background-color: #19587D;}
+  .card-multimedia img{display: none; background-color: #19587D;}
+  .card-multimedia .text{width: 100%; background-color: #19587D;}
+  .text-m{margin-top: 500px;}
+  .bande-annonce{margin-top: 5vh; margin-bottom: 5vh;}
+  .formulaire-contact{padding: 0; margin: 0; width: 150%;}
+  .citation{display: inline-block; text-align: center;}
+  .citation .text-citation{display: inline-block; text-align: center;}
+  .quot-o img{margin-top: 2rem;} 
+  .quot-f img{margin-top: 1rem;} 
+  footer .copyright{margin-left: 0;}
+}
+
+@media screen and (max-width: 700px) {
+  header nav{margin: 0px 132px 0px 20px }
+  .hero .fleche{margin-top: 100px;}
+  .article {font-size: 1.1em;}
+  #quiz-content #quizImg{display: none;}
+  .card-section{display: block;}
+  .card-section .card .desc p{display: flex; align-items: center; text-align: center; width: 90px;}
+  .card-section .card .desc img{display: none;}
+  .text-m{margin-top: 400px;}
+  .bande-annonce img{padding: 0; margin: 0;}
+  footer .quot-o{width: 40px; height: auto; margin-left: 2em;}
+  footer .quot-f{width: 40px; height: auto; margin-left: 0;}
+  footer .copyright{margin-left: 0;}
+}
+
+@media screen and (max-width: 450px) {
+  header nav img{display: none;}
+  .social-icons img{width: 150%;}
+  .social-icons .bat{width: 200%;}
+  .hero .fleche{margin-top: 100px;}
+  .container{margin: 0;}
+  .article {font-size: 1em;}
+  .text-m{margin-top: 400px;}
+  footer .quot-o{width: 40px; height: auto; margin-left: 2em;}
+  footer .quot-f{width: 40px; height: auto; margin-left: 0;}
+  footer .copyright{margin-left: 0;}
+}

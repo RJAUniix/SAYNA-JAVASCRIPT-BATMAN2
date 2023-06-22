@@ -19,7 +19,6 @@ if (targetElement) {
 }
 }
 
-// Fade-in progressif de tous les éléments
 // Fonction pour vérifier si les éléments sont dans la vue lors du défilement
 function checkScroll() {
     const windowHeight = window.innerHeight;
@@ -49,7 +48,7 @@ function checkScroll() {
         element.classList.remove('slide-left');
       }
     });
-  }
+}
 
 // Quiz
 
