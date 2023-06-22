@@ -255,7 +255,7 @@ section {
 }
 #quiz #quiz-content img {
   float: left;
-  width: 200px;
+  width: 250px;
   height: auto;
 }
 #quiz #quiz-content #question {
@@ -351,6 +351,10 @@ section {
 }
 #quiz button:hover {
   background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(245, 139, 0, 0.541) 100%);
+}
+#quiz button:disabled {
+  opacity: 50%;
+  background-color: gray;
 }
 
 /* Les icons média sur la droite */

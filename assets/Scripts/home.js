@@ -17,6 +17,7 @@ function afficherPopup(){
 
 function checkVisibility() {
   var cards = document.querySelectorAll('.card');
+  var scallable = document.querySelectorAll('.scallable');
 
   cards.forEach(function(card) {
     var cardPosition = card.getBoundingClientRect().top;
@@ -28,6 +29,18 @@ function checkVisibility() {
       card.classList.remove('visible');
     }
   });
+
+  scallable.forEach(function(image) {
+    var cardPosition = image.getBoundingClientRect().top;
+    var screenHeight = window.innerHeight;
+
+    if (cardPosition < screenHeight && !image.classList.contains('visible')) {
+      image.classList.add('visible');
+    } else if (cardPosition >= screenHeight && image.classList.contains('visible')) {
+      image.classList.remove('visible');
+    }
+  });
+
 }
 
 window.addEventListener('scroll', checkVisibility);

@@ -183,13 +183,12 @@ function selectOption() {
                     option.querySelector('input[type="checkbox"]').checked = false;
                 });
                 
-                const activeOption = options.querySelector('.selected');
+                activeOption = options.querySelector('.selected');
                 activeOption.classList.remove('selected');
                     
             }
             option.classList.add('selected');
             checkbox.checked = true;
-            
             nextBtn.disabled = false;
         });
     });

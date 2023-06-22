@@ -180,6 +180,7 @@
         &:hover {
           background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(137, 62, 0, 0.411) 100%);
         }
+
     }
   }
 
@@ -204,7 +205,7 @@
         display: flex;
         img {
             float: left;
-            width: 200px;
+            width: 250px;
             height: auto;
         }
 
@@ -314,6 +315,11 @@
 
       &:hover {
       background: linear-gradient(to right, rgba(237, 222, 223, 0.384) 100%, rgba(245, 139, 0, 0.541) 100%);
+      }
+
+      &:disabled {
+        opacity: 50%;
+        background-color: gray;
       }
     }
   }
