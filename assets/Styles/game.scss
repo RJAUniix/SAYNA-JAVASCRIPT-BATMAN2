@@ -19,6 +19,14 @@
     font-family: "spacegrotesk";
   }
 
+  // Le canva
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+  
   /* Navbar */
   nav {
     display: flex;
@@ -301,7 +309,7 @@
       visibility: visible;
     }
 
-    button {
+  button {
       display: block;
       height: 50px;
       width: 300px;

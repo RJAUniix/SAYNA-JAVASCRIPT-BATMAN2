@@ -68,6 +68,13 @@ p {
   font-family: "spacegrotesk";
 }
 
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
 /* Navbar */
 nav {
   display: flex;

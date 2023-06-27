@@ -272,3 +272,87 @@ function restartQuiz() {
     
     loadQuestion();
 }
+
+// Canva
+
+var canvas = document.querySelector('#canvas');
+var ctx = canvas.getContext('2d');
+var raf;
+var running = false;
+// const width = canvas.width = window.innerWidth;
+// const height = canvas.height = window.innerHeight;
+const width = canvas.width = document.documentElement.scrollWidth;
+const height = canvas.height = document.documentElement.scrollHeight;
+
+var icon = {
+x: 100,
+y: 100,
+vx: 50,
+vy: 5,
+radius: 40,
+draw: function() {
+    // Charger l'image
+    const image = new Image();
+    image.src = 'assets/Logos/logohome.png';
+  
+    // Attendre le chargement complet de l'image
+    image.onload = function() {
+      // Dessiner l'image à la place du cercle
+      ctx.drawImage(image, this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius );
+    }.bind(this);
+  }
+};
+
+function clear() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+function draw() {
+clear();
+icon.draw();
+icon.x += icon.vx;
+icon.y += icon.vy;
+
+if (icon.y + icon.vy > canvas.height || icon.y + icon.vy < 0) {
+    icon.vy = -icon.vy;
+}
+if (icon.x + icon.vx > canvas.width || icon.x + icon.vx < 0) {
+    icon.vx = -icon.vx;
+}
+
+raf = window.requestAnimationFrame(draw);
+}
+
+// Mettre à jour les coordonnées du dessin lors du déplacement de la souris
+function updateDrawingCoordinates(e) {
+    const rect = canvas.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    e.clientY = e.clientY - rect.top - scrollTop;
+    console.log(rect.top);
+}
+
+canvas.addEventListener('mousemove', function(e){
+    updateDrawingCoordinates(e);
+    
+    if (!running) {
+        clear();
+        icon.x = e.clientX;
+        icon.y = e.clientY;
+        icon.draw();
+    }
+});
+
+canvas.addEventListener("click",function(e){
+if (!running) {
+    raf = window.requestAnimationFrame(draw);
+    running = true;
+}
+});
+
+canvas.addEventListener("mouseout",function(e){
+    window.cancelAnimationFrame(raf);
+    running = false;
+});
+
+icon.draw();
