@@ -279,10 +279,10 @@ var canvas = document.querySelector('#canvas');
 var ctx = canvas.getContext('2d');
 var raf;
 var running = false;
-// const width = canvas.width = window.innerWidth;
-// const height = canvas.height = window.innerHeight;
-const width = canvas.width = document.documentElement.scrollWidth;
-const height = canvas.height = document.documentElement.scrollHeight;
+
+// Déclarer la taille du canva
+const width = canvas.width = window.innerWidth;
+const height = canvas.height = window.innerHeight;
 
 var icon = {
 x: 100,
@@ -298,7 +298,7 @@ draw: function() {
     // Attendre le chargement complet de l'image
     image.onload = function() {
       // Dessiner l'image à la place du cercle
-      ctx.drawImage(image, this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius );
+      ctx.drawImage(image, this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius);
     }.bind(this);
   }
 };
@@ -324,24 +324,29 @@ raf = window.requestAnimationFrame(draw);
 }
 
 // Mettre à jour les coordonnées du dessin lors du déplacement de la souris
-function updateDrawingCoordinates(e) {
-    const rect = canvas.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    e.clientY = e.clientY - rect.top - scrollTop;
-    console.log(rect.top);
-}
-
-canvas.addEventListener('mousemove', function(e){
-    updateDrawingCoordinates(e);
-    
-    if (!running) {
-        clear();
-        icon.x = e.clientX;
-        icon.y = e.clientY;
-        icon.draw();
-    }
-});
+    function updateDrawingCoordinates(e) {
+        const rect = canvas.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      
+        const mouseX = e.clientX - rect.left + scrollLeft;
+        const mouseY = e.clientY + scrollTop;
+        return {
+          x: mouseX,
+          y: mouseY-50
+        };
+      }
+      
+      canvas.addEventListener('mousemove', function(e) {
+        const { x, y } = updateDrawingCoordinates(e);
+      
+        if (!running) {
+          clear();
+          icon.x = x;
+          icon.y = y;
+          icon.draw();
+        }
+      });
 
 canvas.addEventListener("click",function(e){
 if (!running) {
