@@ -234,6 +234,8 @@ section .card-section {
   grid-auto-flow: column;
   grid-gap: 0px;
   align-items: center;
+  opacity: 0;
+  transform: translateX(-50%);
 }
 section .card-section img {
   width: 17em;
@@ -252,6 +254,11 @@ section .card-section .desc img {
   display: block;
   float: left;
   width: 70px;
+}
+section .card-section-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: 2s cubic-bezier(0.5, 0, 0, 1);
 }
 
 .article {

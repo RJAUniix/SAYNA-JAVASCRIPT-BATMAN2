@@ -86,20 +86,25 @@ if (targetElement) {
 }
 }
 
-// Fonction pour gérer l'apparition progressive des éléments au scrolling
-// function handleScroll() {
-//     var items = document.querySelectorAll('section');
-  
-//     items.forEach(function(section) {
-//       if (isElementInViewport(section)) {
-//         section.style.opacity = '1';
-//         section.style.transform = 'translateX(0)';
-//       }
-//     });
-//   }
-  
-//   // Écouteur d'événement pour déclencher la fonction handleScroll() au scrolling
-//   window.addEventListener('scroll', handleScroll);
-  
-//   // Appeler handleScroll() une fois au chargement initial de la page pour vérifier les éléments déjà visibles
-//   handleScroll();
+// Pour gérer l'apparition progressive des éléments au scrolling
+
+const ratio = .1
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: ratio
+}
+
+const handleIntersect = function (entries, observer) {
+  entries.forEach(function (entry){
+    if (entry.intersectionRatio > ratio) {
+      entry.target.classList.add('card-section-visible')
+      observer.unobserver(entry.target)
+    }
+  })
+}
+
+const observer = new IntersectionObserver(handleIntersect, options)
+document.querySelectorAll('.card-section').forEach(function (r) {
+  observer.observe(r)
+})
